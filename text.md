@@ -14,3 +14,6 @@ gulp
 scss
 jQuery
 
+npm install gulp -g  
+npm install gulp --save-dev  
+npm install gulp-concat gulp-uglify gulp-minify-css gulp-sass gulp-markdown --save-dev
