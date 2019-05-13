@@ -7,6 +7,8 @@ var sass = require("gulp-sass");
 var sourcemaps = require('gulp-sourcemaps');
 var markdown = require('gulp-markdown');
 var livereload = require('gulp-livereload');
+var babel = require('gulp-babel');
+
 
 /*파일 경로*/
 var src = {};
@@ -17,7 +19,7 @@ src.scss = src.root + "/scss";
 src.js = src.root + "/js";
 src.css = src.dist + "/css";
 path.scss = src.scss + "/*.scss";
-path.js = src.js + "/*.js";
+path.js = src.js + "/**/*.js";
 path.css = src.css + "/*.css";
 
 
@@ -55,6 +57,14 @@ gulp.task('md', function () {
     return gulp.src("*.md")
         .pipe(markdown())
         .pipe(gulp.dest(src.dist));
+});
+
+//바벨
+gulp.task('babel2', function () {
+    return gulp.src("public/js/**/*.js")
+        // .pipe(concat("./testtest.js"))
+        .pipe(babel())
+        .pipe(gulp.dest("public/"));
 });
 
 //default :: css
