@@ -17,3 +17,6 @@ jQuery
 npm install gulp -g  
 npm install gulp --save-dev  
 npm install gulp-concat gulp-uglify gulp-minify-css gulp-sass gulp-markdown --save-dev
+
+npm install --save-dev @babel/core
+npm install --save-dev @babel/preset-env

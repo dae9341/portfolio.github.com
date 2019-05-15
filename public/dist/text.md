@@ -11,3 +11,6 @@
 <p>gulp
 scss
 jQuery</p>
+<p>npm install gulp -g<br>npm install gulp --save-dev<br>npm install gulp-concat gulp-uglify gulp-minify-css gulp-sass gulp-markdown --save-dev</p>
+<p>npm install --save-dev @babel/core
+npm install --save-dev @babel/preset-env</p>
