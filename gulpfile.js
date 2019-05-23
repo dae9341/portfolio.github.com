@@ -8,7 +8,9 @@ var sourcemaps = require('gulp-sourcemaps');
 var markdown = require('gulp-markdown');
 var livereload = require('gulp-livereload');
 var babel = require('gulp-babel');
-
+var ifElse = require('gulp-if-else');
+var rename = require('gulp-rename');
+var replace = require('gulp-replace');
 
 /*파일 경로*/
 var src = {};
@@ -21,6 +23,8 @@ src.css = src.dist + "/css";
 path.scss = src.scss + "/*.scss";
 path.js = src.js + "/**/*.js";
 path.css = src.css + "/*.css";
+
+path.ignorescss = src.scss + "/aaa_*.scss";
 
 
 //컴파일
@@ -67,5 +71,19 @@ gulp.task('babel2', function () {
         .pipe(gulp.dest("public/"));
 });
 
+//psr
+gulp.task("scss:compile:psr", function () {
+    return gulp.src(path.scss)
+        .pipe(replace('/*[#1234]start',''))
+        .pipe(replace('[#1234]end*/',''))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest(src.css));
+});
+gulp.task("watch:psr", function () {
+    gulp.watch(path.scss, ["scss:compile:psr"]);
+    gulp.watch(path.css, ["css:concat"]);
+});
+
 //default :: css
 gulp.task("default", ["scss:compile","css:concat", "watch"]);
+gulp.task("psr", ["scss:compile:psr","css:concat", "watch:psr"]);
