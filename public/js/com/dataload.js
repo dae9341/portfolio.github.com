@@ -9,7 +9,7 @@ $.ajax({
     cache: false,
     async:true
     , success: function (data, status, xhr) {
-        console.log(data);
+        console.log(data.values[0][0]);
     }, error: function (jqXHR, textStatus, errorThrown) {
         console.log(arguments);
     }

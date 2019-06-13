@@ -3,17 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="public/dist/main.css">
+<!--    <link rel="stylesheet" href="public/dist/main.css">-->
     <script type="text/javascript" src="public/js/lib/jQuery.js"></script>
-    <script type="text/javascript" src="public/js/com/dataload.js"></script>
-    <script type="text/javascript" src="public/js/com/dataset.js"></script>
+    <script type="text/javascript" src="public/js/com/dataController.js"></script>
 </head>
 <body>
     <div class="test">
         <p>Hello !</p>
-        <input name="shheet" type="text" value="" />
-        <a href="#" onclick ="">확인</a>
+        <ul class="dataInputLayer">
+            <li data-name="a">
+                <span>a:</span>
+                <input type="text" />
+            </li>
+            <li data-name="b">
+                <span>b:</span>
+                <input type="text" />
+            </li>
+            <li data-name="d">
+                <span>d:</span>
+                <input type="text" />
+            </li>
+        </ul>
+        <a href="#" onclick="dataInput()">ok</a>
     </div>
 </body>
+<style>
+    li{list-style: none;}
+    input{}
+</style>
 
+<script type="text/javascript">
+    var data = {
+        "a":"apple",
+        "b":"banana",
+        "d":"dog",
+    };
+
+    function dataInput(){
+        $(".dataInputLayer li").each(function () {
+            var $self = $(this);
+            var dataName = $self.attr("data-name");
+            data[dataName] = $self.find("input").val();
+            console.log(data);
+        });
+        dataSet(data);
+    }
+
+</script>
 </html>
+<!--https://docs.google.com/spreadsheets/d/1bafTzBf62qEk72hBN7l1pSxgdYapzlMnZxvvPVmudVc/edit#gid=0-->
+<!--데이터 입력페이지-->
+<!--VIEW 페이지-->
