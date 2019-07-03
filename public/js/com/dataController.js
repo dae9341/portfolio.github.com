@@ -20,7 +20,7 @@ function dataSet(data){
     });
 }
 
-function dataLoad(){
+function dataLoad(dom){
     $.ajax({
         url: loadUrl,
         method:"GET",
@@ -29,11 +29,26 @@ function dataLoad(){
         cache: false,
         async:true
         , success: function (data, status, xhr) {
-            console.log(data);
 
+            console.log(data);
+            $(dom).children().remove();
+            var html = "";
+
+            for(var i = 0; i<data.values.length; i++){
+                html += "<div class='data1up' id='data"+i+"'>";
+                for(var j = 0; j<data.values[i].length; j++){
+                    html +="<div>"+data.values[i][j]+"</div>";
+                }
+                html+="</div>"
+            }
+            $(dom).append(html);
         }, error: function (jqXHR, textStatus, errorThrown) {
             console.log(arguments);
         }
     });
+
+}
+
+function dataReset() {
 
 }

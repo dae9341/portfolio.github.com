@@ -1,5 +1,20 @@
 .test{
-  a{text-decoration: none; color: red; font-size: 200px; }
+  a{text-decoration: none; color: red; font-size: 20px; }
+}
+
+#dataContainer{
+  .data1up{
+    display: block;
+    clear: both;
+    >div{
+      float: left;
+      padding: 5px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      border:1px solid #dedede;
+      box-sizing: border-box;
+    }
+  }
 }
 
 /*[#1234]start

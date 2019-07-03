@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <link rel="stylesheet" href="public/dist/main.css">-->
+    <link rel="stylesheet" href="public/dist/main.css">
     <script type="text/javascript" src="public/js/lib/jQuery.js"></script>
     <script type="text/javascript" src="public/js/com/dataController.js"></script>
 </head>
@@ -11,11 +11,11 @@
     <div class="test">
         <p>Hello !</p>
         <ul class="dataInputLayer">
-            <li data-name="a">
+            <li data-name="날짜">
                 <span>a:</span>
                 <input type="text" />
             </li>
-            <li data-name="b">
+            <li data-name="시간">
                 <span>b:</span>
                 <input type="text" />
             </li>
@@ -26,7 +26,7 @@
         </ul>
         <a href="#" onclick="dataInput()">ok</a>
 
-        <a href="#" onclick="dataLoad()">데이터출력</a>
+        <a href="#" onclick="dataOutput()">데이터출력</a>
 
         <div id="dataContainer">
 
@@ -40,9 +40,8 @@
 
 <script type="text/javascript">
     var data = {
-        "a":"apple",
-        "b":"banana",
-        "d":"dog",
+        "날짜":"apple",
+        "시간":"banana",
     };
 
     function dataInput(){
@@ -54,9 +53,9 @@
         });
         dataSet(data);
     }
-    
+
     function dataOutput() {
-        
+        dataLoad("#dataContainer");
     }
 
 </script>

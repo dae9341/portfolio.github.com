@@ -8,7 +8,6 @@ var sourcemaps = require('gulp-sourcemaps');
 var markdown = require('gulp-markdown');
 var livereload = require('gulp-livereload');
 var babel = require('gulp-babel');
-var ifElse = require('gulp-if-else');
 var rename = require('gulp-rename');
 var replace = require('gulp-replace');
 
