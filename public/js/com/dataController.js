@@ -34,11 +34,12 @@ function dataLoad(dom){
             $(dom).children().remove();
             var html = "";
 
-            for(var i = 0; i<data.values.length; i++){
+            for(var i = 1; i<data.values.length; i++){
                 html += "<div class='data1up' id='data"+i+"'>";
                 for(var j = 0; j<data.values[i].length; j++){
-                    html +="<div>"+data.values[i][j]+"</div>";
+                    html +="<span class='element"+j+"'>"+data.values[i][j]+"</span>";
                 }
+                html +="<span class='deleteEl' onclick='deleteData()'><img src='' alt='삭제'/> </span>";
                 html+="</div>"
             }
             $(dom).append(html);
@@ -49,6 +50,19 @@ function dataLoad(dom){
 
 }
 
-function dataReset() {
+function addData() {
+
+}
+
+function dateSet(){
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+    return yyyy+mm+dd;
+}
+
+function deleteData() {
 
 }

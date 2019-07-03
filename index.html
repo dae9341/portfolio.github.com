@@ -12,36 +12,32 @@
         <p>Hello !</p>
         <ul class="dataInputLayer">
             <li data-name="날짜">
-                <span>a:</span>
+                <span>날짜:</span>
                 <input type="text" />
             </li>
             <li data-name="시간">
-                <span>b:</span>
+                <span>시간:</span>
                 <input type="text" />
             </li>
-            <li data-name="d">
-                <span>d:</span>
+            <li data-name="내용">
+                <span>내용:</span>
                 <input type="text" />
             </li>
         </ul>
-        <a href="#" onclick="dataInput()">ok</a>
+        <a href="#" onclick="dataInput();">데이터업데이트</a>
 
-        <a href="#" onclick="dataOutput()">데이터출력</a>
 
         <div id="dataContainer">
 
         </div>
     </div>
 </body>
-<style>
-    li{list-style: none;}
-    input{}
-</style>
 
 <script type="text/javascript">
     var data = {
-        "날짜":"apple",
-        "시간":"banana",
+        "날짜":"",
+        "시간":"",
+        "내용":"banana",
     };
 
     function dataInput(){
@@ -57,6 +53,8 @@
     function dataOutput() {
         dataLoad("#dataContainer");
     }
+
+    dataOutput();
 
 </script>
 </html>

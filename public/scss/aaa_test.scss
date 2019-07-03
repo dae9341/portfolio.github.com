@@ -6,13 +6,23 @@
   .data1up{
     display: block;
     clear: both;
-    >div{
-      float: left;
-      padding: 5px;
+    border:2px dashed rebeccapurple;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 5px;
+    position: relative;
+    //날짜
+    .element0{
       margin-right: 5px;
-      margin-bottom: 5px;
-      border:1px solid #dedede;
-      box-sizing: border-box;
+    }
+    //시간
+    .element1{
+    }
+    //데이터 삭제
+    .deleteEl{
+      position: absolute;
+      top:5px; right: 5px;
+      cursor:pointer;
     }
   }
 }
