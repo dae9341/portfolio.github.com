@@ -1,0 +1,84 @@
+.cpnt-prdItem{
+  position: relative;
+  &.soldout{
+    .soldoutLayer{ display: block; width: 100%; height: 100%; position: absolute;top: 0;left: 0; z-index: 3;
+      .soldoutDim{ display: block; width: 100%; height: 100%; background: black; opacity: 0.3;position: absolute;top: 0;left: 0; }
+      .soldoutText{ display: block; width: 100%; height: 100%; position: absolute; top:0; left: 0;
+        >div{ display: table; width: 100%; height: 100%;
+          >span{text-align: center; font-size: 30px; color:#fff; vertical-align: middle; display: table-cell}
+        }
+
+      }
+
+    }
+  }
+
+  padding: 16px 24px;
+  width: 250px;
+  box-sizing: border-box;
+  border:1px solid #eaeaea;
+  .soldoutLayer{display: none}
+
+  .cpnt-prdItemThum{
+    .prdImageWrap{
+      position: relative;
+      >img{width: 100%;}
+      .prdImage{display: block}
+      .prdImageLabel{position: absolute;top:0; left: 0; text-indent: -999999px;
+        >span{
+          display: block; width: 46px; height: 46px;float: left;
+          &.label-gongyoungdeal{background: url(//img.publichs.com/ECMCFO/images/display/bgDealTac2_20181101.png) no-repeat}
+          &.label-best{background: #ea4242; text-indent: 0; color:#fff; font-size: 25px; line-height: 46px; text-align: center;}
+          &.label-create{background: url(//img.publichs.com/ECMCFO/images/display/bgCreativeTac2.png) no-repeat;}
+        }
+      }
+    }
+
+    .prdName{
+      margin-top: 25px;
+      height: 40px;
+      line-height: 20px;
+      overflow: hidden;
+    }
+  }
+
+  .cpnt-prdInfo{
+    .prdPriceContent {
+      position: relative;
+      padding-top: 10px;
+      .prdSell {
+        color: #666;
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .prdSellPrice {
+        color: #cc2f26;
+        font-size: 20px;
+        font-weight: 400;
+        float: right;
+      }
+
+      .prdOriginPrice{
+        display: block;
+        text-align: right;
+        text-decoration: line-through;
+      }
+    }
+
+    .prdLabelContent{ margin-top: 10px;
+      >div{color:#fff; background: black; font-size: 8px; text-align: center; display: inline-block; width: auto; padding: 3px 5px; line-height: 1;
+        &.prdExpressFree{background: #999;}
+        &.prdNoneAdd{background: #2b81af}
+      }
+    }
+    .btnBroadCastAlarm{ text-align: center; margin-top: 20px; display: block}
+
+    .btnDirectWrap{
+      text-align: center;
+      a{
+        text-decoration: none; width: 50%; height: 20px; line-height: 20px; text-align: center; border:1px solid; display: inline-block; color:#C21F39;
+      }
+    }
+  }
+}
